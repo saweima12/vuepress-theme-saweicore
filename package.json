@@ -4,7 +4,7 @@
   "description": "custom vuepress blog theme.",
   "main": "index.js",
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": ">=4.17.19",
     "vuepress": "^1.4.0",
     "vuepress-plugin-disqus": "^0.2.0"
   },

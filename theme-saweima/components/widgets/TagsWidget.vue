@@ -69,7 +69,7 @@ export default {
       padding .2rem .4rem
       min-width 2rem
       margin 0 .2rem 1rem
-      line-height normal
+      line-height 1.4rem
 
       &:hover
         background var(--textLightenColor)
