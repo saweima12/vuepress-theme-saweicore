@@ -1,12 +1,11 @@
 {
-  "name": "vuepress-saweima-blog",
+  "name": "vuepress-saweicore-blog",
   "version": "1.0.0",
   "description": "custom vuepress blog theme.",
   "main": "index.js",
   "dependencies": {
     "lodash": ">=4.17.19",
-    "vuepress": "^1.4.0",
-    "vuepress-plugin-disqus": "^0.2.0"
+    "vuepress": "^1.4.0"
   },
   "devDependencies": {
     "@goy/vuepress-plugin-svg-icons": "^4.2.0",
