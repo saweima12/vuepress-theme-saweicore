@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saweima12/vuepress-theme-saweima.git"
+    "url": "git+https://github.com/saweima12/vuepress-theme-saweicore.git"
   },
   "keywords": [
     "vuepress"
@@ -16,9 +16,9 @@
   "author": "Saweima",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saweima12/vuepress-theme-saweima/issues"
+    "url": "https://github.com/saweima12/vuepress-theme-saweicore/issues"
   },
-  "homepage": "https://github.com/saweima12/vuepress-theme-saweima#readme",
+  "homepage": "https://github.com/saweima12/vuepress-theme-saweicore#readme",
   "dependencies": {
     "@vuepress/plugin-active-header-links": "^1.5.2",
     "@vuepress/plugin-blog": "^1.9.2",
