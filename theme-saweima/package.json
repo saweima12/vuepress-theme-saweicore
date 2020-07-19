@@ -1,0 +1,40 @@
+{
+  "name": "vuepress-theme-saweima",
+  "version": "0.1.0",
+  "description": "Custom theme for saweima's blog.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saweima12/vuepress-theme-saweima.git"
+  },
+  "keywords": [
+    "vuepress"
+  ],
+  "author": "Saweima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saweima12/vuepress-theme-saweima/issues"
+  },
+  "homepage": "https://github.com/saweima12/vuepress-theme-saweima#readme",
+  "dependencies": {
+    "@vuepress/plugin-active-header-links": "^1.5.2",
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-medium-zoom": "^1.5.2",
+    "@vuepress/plugin-nprogress": "^1.5.2",
+    "@vuepress/plugin-search": "^1.5.2",
+    "loadsh": "0.0.4",
+    "lodash": "^4.17.15",
+    "prismjs": "^1.20.0",
+    "vue-feather-icons": "^5.0.0",
+    "vuepress-plugin-container": "^2.1.4",
+    "vuepress-plugin-disqus": "^0.2.0",
+    "vuepress-plugin-reading-progress": "^1.0.9",
+    "vuepress-plugin-smooth-scroll": "0.0.9"
+  },
+  "devDependencies": {
+    "moment": "^2.27.0"
+  }
+}

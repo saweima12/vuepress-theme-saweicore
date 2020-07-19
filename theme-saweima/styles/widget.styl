@@ -1,0 +1,40 @@
+$rule-widget
+  a
+    color var(--textColor)
+    opacity .6
+
+  > *
+    display flex
+    position relative
+    align-items center
+    justify-content space-between
+    padding .35rem 0
+    transition .2s ease
+
+    &:hover
+      padding-left .8rem
+
+    &:not(:last-child)
+      border-bottom 1px solid #ddd
+
+    &.router-link-exact-active
+      padding-left .8rem
+      color #fff
+      background $accentColor
+
+$rule-widget-name
+  display inline-block
+  font-size .9rem
+  font-weight 500
+
+$rule-widget-amount
+  background var(--textColor)
+  margin-right .5em
+  border-radius: 8px;
+  color var(--mainBg)
+  width 20px
+  text-align center
+  padding: 0 .24rem
+  font-size .6rem
+  line-height 1rem
+

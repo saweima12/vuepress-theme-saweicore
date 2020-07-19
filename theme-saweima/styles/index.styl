@@ -1,0 +1,51 @@
+@require "_reset"
+@require "_arrow"
+@require "_context"
+
+
+html
+  font-family -apple-system,system-ui,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif
+
+body
+  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  -webkit-tap-highlight-color transparent
+  font-size 16px
+  color $textColor
+  background var(--bodyBg)
+  text-align: justify;
+  text-justify:inter-ideograph;
+
+#theme-container
+  color var(--textColor)
+  box-sizing border-box
+  min-height 100vh
+  overflow hidden
+
+.blur // 模糊滤镜
+  backdrop-filter saturate(200%) blur(20px)
+
+// Propery
+.p-relative
+  position relative
+
+.cursor-p
+  cursor pointer
+
+// Container
+.custom-page
+  min-width calc(100vh - 3.6rem)
+  padding-top $navbarHeight
+
+.card-box // 卡片
+  border-radius 5px
+  background var(--mainBg)
+  box-shadow 0 1px 2px 0 rgba(0,0,0,.1)
+
+.feather-icon
+  position absolute
+  top 2px
+
+.feather-icon-after
+  margin-left 1.2rem
