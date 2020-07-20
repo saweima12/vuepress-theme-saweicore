@@ -44,7 +44,7 @@ export default {
     width $sidebarWidth
 
   @media screen and (min-width: $mq-lg)
-    background var(--sidebarBg)
+    background var(--blurBg)
 
 // If sidebar open
 .sidebar-open

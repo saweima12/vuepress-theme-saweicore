@@ -41,6 +41,7 @@ export default {
     box-sizing border-box
     padding 1rem
     margin 0 auto .8rem
+    @extend $card-box
 
   .widget-header
     position relative

@@ -1,5 +1,5 @@
 <template>
-  <div class="tags-widget widget card-box">
+  <div class="tags-widget widget">
     <div class="widget-header">
       <div class="icon">
         <TagIcon/>

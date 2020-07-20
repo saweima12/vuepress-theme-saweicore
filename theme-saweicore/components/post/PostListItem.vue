@@ -1,5 +1,5 @@
 <template>
-  <div class="post card-box">
+  <div class="post">
     <header class="post-header">
       <h1 class="title">
         <router-link :to="post.path" >
@@ -57,6 +57,7 @@ export default {
   padding 1rem 1.5rem .8rem
   margin-bottom .5rem
   transition .3s
+  @extend $card-box
 
   .title
     font-size 1.4rem

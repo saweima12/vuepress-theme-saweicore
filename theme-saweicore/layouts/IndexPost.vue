@@ -59,7 +59,12 @@ export default {
 
 .index-post-page
   .main-wrapper
-    @extend $index-wrapper
+    transition .2s
+    max-width $indexPageWidth
+
+    @media screen and (min-width: $mq-md)
+      margin .5rem auto
+
 
 .list-pagination
   width 100%

@@ -5,22 +5,24 @@
   >
     <slot name="top" />
     <!-- main content -->
-    <article class="content-wrapper">
-      <header class="article-header">
-        <ArticleInfo v-if="isArticle"/>
-        <h1 class="title" v-if="$page.title">{{$page.title}}</h1>
-      </header>
-      <Content class="context"/>
-    </article>
+    <div class="article-wrapper" :class="pageClassesMode">
+      <article class="content-wrapper">
+        <header class="article-header">
+          <ArticleInfo v-if="isArticle"/>
+          <h1 class="title" v-if="$page.title">{{$page.title}}</h1>
+        </header>
+        <Content class="context"/>
+      </article>
+      <!-- Author Field -->
+      <section
+        class="author-wrapper"
+        v-if="isArticle"
+      >
+        <AuthorInfo />
+      </section>
+    </div>
 
 
-    <!-- Author Field -->
-    <section
-      class="author-wrapper"
-      v-if="isArticle"
-    >
-      <AuthorInfo />
-    </section>
 
     <slot name="bottom"/>
 
@@ -44,8 +46,14 @@ export default {
     Comment
   },
   computed: {
-    pid () {
-      return this.$page.pid
+    pid() {
+      return this.$page.pid;
+    },
+    pageClassesMode() {
+      const { blogOption } = this.$themeConfig;
+      const { frontmatter } = this.$page;
+      return frontmatter.mode || blogOption.defaultPageMode || 'classic'
+
     },
     isArticle() {
       return this.pid == 'post'
@@ -62,10 +70,8 @@ export default {
       return this.$page.frontmatter.comment !== false &&
             this.$site.themeConfig.comment &&
             this.$site.themeConfig.comment.vssue === true
-    }
+    },
   },
-  mounted() {
-  }
 }
 </script>
 
@@ -73,48 +79,21 @@ export default {
 @import "../styles/wrapper.styl"
 
 .page
-  padding .5rem 0
   transition .2s ease
 
   img
     max-width 100%
 
-  > *
+  > *:not(.article-wrapper)
     transition .2s ease
-    @extend $content-wrapper
-
-  @media screen and (min-width $mq-md)
-    padding 1rem .5rem
-
-  @media screen and (min-width $mq-lg)
-    padding 1.5rem .5rem
-
-// PageInfo style
-.content-wrapper
-  padding-bottom 3rem
-
-  .article-info
-    border-bottom 1px solid var(--borderColor)
-
-  .article-header
-    margin-bottom 1rem
-
-  .title
-    font-size 25px
-    font-weight 600
-    margin 20px auto 10px
+    @extend $content-wrapper, $card-box
 
 // PageContent style
-.content-wrapper
-  .context
-    *
-      box-sizing border-box
-      outline none
-    p
-      font-size 18px
-      line-height 1.8em
-      margin 20px 0 40px
+.article-wrapper
+  box-sizing border-box
 
+  > *
+    @extend $content-wrapper
 
 
 @media screen and (min-width $mq-lg)

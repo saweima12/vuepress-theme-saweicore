@@ -1,5 +1,5 @@
 <template>
-  <div class="author-widget widget card-box">
+  <div class="author-widget widget">
     <div class="avatar">
       <img :src="author.avatar" alt="">
     </div>
@@ -52,8 +52,6 @@ export default {
 
 <style lang="stylus">
 .author-widget
-  img
-    width 100%
 
   .avatar
     width 80%

@@ -1,5 +1,5 @@
 <template>
-  <div class="categories-widget widget card-box">
+  <div class="categories-widget widget">
     <div class="widget-header p-relative">
       <div class="icon">
         <FolderIcon/>

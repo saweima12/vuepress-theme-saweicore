@@ -68,6 +68,7 @@ export default {
 
   > *
     transition .2s ease
+    background var(--mainBg)
     @extend $content-wrapper
 
   @media screen and (min-width $mq-md)
