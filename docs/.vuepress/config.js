@@ -42,8 +42,8 @@ module.exports = {
       },
     },
   plugins: [
-  //   ['vuepress-plugin-disqus', {
-  //     shortname: 'saweima'
-  //   }],
+    // ['vuepress-plugin-disqus', {
+    //   shortname: ''
+    // }],
   ]
 }
