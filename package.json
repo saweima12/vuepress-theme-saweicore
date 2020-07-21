@@ -6,7 +6,7 @@
   "dependencies": {
     "lodash": ">=4.17.19",
     "vuepress": "^1.4.0",
-    "vuepress-theme-saweicore": "^0.1.0"
+    "vuepress-theme-saweicore": "^0.1.2"
   },
   "devDependencies": {
     "@goy/vuepress-plugin-svg-icons": "^4.2.0",

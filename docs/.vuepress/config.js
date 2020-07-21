@@ -33,7 +33,7 @@ module.exports = {
       },
       // Plugin blog setting
       blogOption: {
-
+        defaultPageMode: 'classic'   // classic || vocus
       },
       // Comment system setting.
       comment: {
@@ -42,8 +42,8 @@ module.exports = {
       },
     },
   plugins: [
-    // ['vuepress-plugin-disqus', {
-    //   shortname: ''
-    // }],
+  //   ['vuepress-plugin-disqus', {
+  //     shortname: 'saweima'
+  //   }],
   ]
 }
