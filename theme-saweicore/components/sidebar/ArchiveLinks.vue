@@ -52,7 +52,7 @@ export default {
   .archive-title
     padding .35rem 1.2rem .25rem 1.25rem
     font-size 1.2rem
-    font-weight bold
+    font-weight 600
 
   .chapter-list
     padding .5rem 0
@@ -62,7 +62,7 @@ export default {
 
     .title
       font-size 1.1rem
-      font-weight 550
+      font-weight 600
       padding .3rem 0
 
 .collapsable-group

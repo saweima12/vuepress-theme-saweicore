@@ -27,10 +27,8 @@ export function filterArchives(pages) {
 export function filterArchiveChapter(archive_page, pages) {
   return pages.reduce((obj, page) => {
 
-    if (page.pid != 'post')
+    if (page.pid === 'archive')
       return obj;
-
-
 
     // get page's frontmatter
     const { frontmatter: { archive } } = page;

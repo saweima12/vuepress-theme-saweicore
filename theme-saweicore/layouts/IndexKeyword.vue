@@ -67,6 +67,7 @@ export default {
   transition .2s ease
 
   > *
+    box-sizing border-box
     transition .2s ease
     background var(--mainBg)
     @extend $content-wrapper
@@ -89,19 +90,22 @@ export default {
 
   .categories, .tags
     width 100%
-    display inline-block
-    padding .5rem
+    display block
+
     .links
-      padding .5rem 0
-      margin 0 auto
+      display inline-block
+      margin 1rem auto
+      width 100%
+      text-align center
 
       > a
         // background var(--bodyBg)
+        box-sizing border-box
         font-weight 500
-        border 1px solid var(--borderColor)
+        border-bottom 1px solid var(--borderColor)
         display inline-block
         min-width 2rem
-        width 45%
+        width 100%
         margin .4rem .2rem
         line-height 1.4rem
         padding .2rem .5rem
@@ -117,6 +121,7 @@ export default {
 
         @media screen and (min-width $mq-md)
           border-radius 5px
+          max-width 45%
 
 
 

@@ -22,8 +22,6 @@
       </section>
     </div>
 
-
-
     <slot name="bottom"/>
 
     <!-- Comment Field -->
@@ -51,8 +49,10 @@ export default {
     },
     pageClassesMode() {
       const { blogOption } = this.$themeConfig;
-      const { frontmatter } = this.$page;
-      return frontmatter.mode || blogOption.defaultPageMode || 'classic'
+      const { frontmatter, pid } = this.$page;
+      return frontmatter.mode
+         || (pid == 'post' ? blogOption.defaultPageMode : 'classic')
+         || 'classic'
 
     },
     isArticle() {

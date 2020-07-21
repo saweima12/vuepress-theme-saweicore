@@ -1,7 +1,9 @@
+// Global Zone
 a
   font-weight 500
   color $accentColor
   text-decoration none
+
 
 p a code
   font-weight 400
@@ -30,6 +32,13 @@ strong
 img
   max-width 100%
 
+// PostList Zone
+.post
+  p
+    margin 1rem 0 1.2rem
+
+
+// Article Zone
 .article-wrapper
   h1, h2, h3, h4, h5, h6
     margin-top 2rem
@@ -101,10 +110,13 @@ img
     text-indent -.1em
     margin-top 29px
 
+  blockquote
+    & > p
+      margin .5rem 0
 
   @media screen and (min-width $mq-md)
     p
-      margin 12px 0
+      margin 12px 0 40px
       font-size 20px
       font-weight 400
       line-height 1.7em
@@ -115,8 +127,9 @@ img
     h3
       font-size 26px
 
-    h2,h3
+    h2, h3
       font-weight 800
       letter-spacing: -.015em
       text-indent -.1em
+
 

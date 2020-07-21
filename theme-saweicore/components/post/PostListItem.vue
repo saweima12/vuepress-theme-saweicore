@@ -71,7 +71,6 @@ export default {
 
   .summary
     margin-top 0rem
-    padding .8rem 0
     border-top 1px solid var(--borderColor)
     line-height 1.7rem
 
