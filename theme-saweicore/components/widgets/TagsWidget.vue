@@ -76,6 +76,7 @@ export default {
   .mode-block
     a
       color var(--blurBg)
+      font-size 13px
       text-align center
       opacity .8
 

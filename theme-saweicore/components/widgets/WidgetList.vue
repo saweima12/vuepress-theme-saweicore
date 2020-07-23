@@ -34,7 +34,6 @@ export default {
 
 <style lang="stylus">
 .widget-list
-
   .widget
     width 100%
     display inline-block

@@ -70,5 +70,4 @@ export default {
   .more-link
     @extend $widget-more-link
 
-
 </style>

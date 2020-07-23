@@ -19,7 +19,8 @@ export default {
 <style lang="stylus">
 .double-column-wrapper
   box-sizing border-box
-  display inline-block
+  display flex
+  flex-direction column-reverse
   position relative
   padding .5rem 0
   width 100%
@@ -28,12 +29,15 @@ export default {
 @media screen and (min-width $mq-md)
   .double-column-wrapper
     display flex
+    flex-direction row
     padding 1rem .9rem
 
     .left
       flex 1
 
     .right
-      padding-left .5rem
+      width 255px
+      margin-left .5rem
+
 
 </style>

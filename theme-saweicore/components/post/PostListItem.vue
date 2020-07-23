@@ -1,30 +1,30 @@
 <template>
   <div class="post">
-    <header class="post-header">
-      <h1 class="title">
-        <router-link :to="post.path" >
-          {{ post.title }}
-        </router-link>
-      </h1>
-      <PostInfo
-        :post="post"
-      />
-    </header>
-
-    <div class="summary" v-if="post.excerpt">
-      <div v-html="post.excerpt"/>
-    </div>
-
-    <div class="post-footer">
-      <div class="tags">
-
-        <NavLink
-          v-for="tag in tags"
-          :key="tag.text"
-          :item="tag"
-          class="tag"
+    <div class="item-wrapper">
+      <header class="post-header">
+        <h1 class="title">
+          <router-link :to="post.path" >
+            {{ post.title }}
+          </router-link>
+        </h1>
+        <PostInfo
+          :post="post"
         />
+      </header>
 
+      <div class="summary" v-if="post.excerpt">
+        <div v-html="post.excerpt"/>
+      </div>
+
+      <div class="post-footer">
+        <div class="tags">
+          <NavLink
+            v-for="tag in tags"
+            :key="tag.text"
+            :item="tag"
+            class="tag"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@ export default {
     tags() {
       const { map } = this.$tag
       return getTags(this.post, map)
-    }
+    },
   }
 }
 </script>
@@ -79,6 +79,9 @@ export default {
     line-height 1.7rem
 
 .post
+  &:hover
+    box-shadow 0 2px 16px 0 rgba(0, 0, 0, 0.2)
+
   .tags
     padding .5rem 0
 
@@ -89,6 +92,7 @@ export default {
       margin 0 .5rem .6rem 0
       padding .3rem
       background #999
+      font-size 13px
       border-radius 3px
       line-height 1.2rem
       color var(--mainBg)
@@ -96,11 +100,10 @@ export default {
       &:hover, &.router-link-exact-active
         background $accentColor
 
-
-
-
 @media screen and (min-width $mq-lg)
   .post
     margin-bottom 1rem
+
+
 
 </style>

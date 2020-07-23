@@ -33,7 +33,7 @@ export default {
   transition .2s ease
 
   .list-item
-    display: inline-block;
+    display: flex;
 
   .list-enter-active, .list-leave-active
     transition: all .3s ease;

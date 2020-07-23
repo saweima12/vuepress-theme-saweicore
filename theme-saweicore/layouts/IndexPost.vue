@@ -62,9 +62,11 @@ export default {
     transition .2s
     max-width $indexPageWidth
 
-    @media screen and (min-width: $mq-md)
-      margin .5rem auto
+    @media screen and (min-width $mq-sm)
+      margin 0 .5rem
 
+    @media screen and (min-width $mq-lg)
+      margin .5rem auto
 
 .list-pagination
   width 100%

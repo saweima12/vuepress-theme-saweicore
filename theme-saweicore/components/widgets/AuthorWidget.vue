@@ -54,9 +54,12 @@ export default {
 .author-widget
 
   .avatar
-    width 80%
-    border 1px solid #aaa
+    box-sizing border-box
+    width 100%
+    padding .5rem 1rem 0 1rem
     margin 0 auto
+    img
+      border 1px solid #aaa
 
   .author-info
     display block
