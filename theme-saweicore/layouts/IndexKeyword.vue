@@ -119,8 +119,9 @@ export default {
           color #fff
 
         @media screen and (min-width $mq-md)
+
+          width 50% - 6rem
           border-radius 5px
-          max-width 45%
 
       @media screen and (min-width $mq-md)
         padding-left .1rem

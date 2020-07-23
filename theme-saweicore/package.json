@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-saweicore",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Custom theme for saweima's blog.",
   "main": "index.js",
   "scripts": {
