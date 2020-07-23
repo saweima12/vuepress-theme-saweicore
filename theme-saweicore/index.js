@@ -1,7 +1,6 @@
 const path = require('path');
 const defaultThemeOptions = require('./config/defaultThemeOptions');
 const defualtBlogPluginOptions = require('./config/defaultBlogPlugin');
-const { theme } = require('../docs/.vuepress/config');
 
 module.exports = (themeConfig, ctx) => {
     // get theme API.
