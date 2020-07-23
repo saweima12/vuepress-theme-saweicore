@@ -44,7 +44,7 @@ export default {
     display inline-block
     position absolute
     left 1rem
-    top ($navbarHeight + 1rem)
+    top ($navbarHeight + .3rem)
     padding 0
     text-align center
     color #cdcdcd
@@ -59,6 +59,10 @@ export default {
       display inline
       width 1rem
       height 1rem
+
+@media screen and (min-width $mq-lg)
+  .sidebar-button
+    top ($navbarHeight + 1.2rem)
 
 
 @media screen and (min-width $mq-md)

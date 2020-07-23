@@ -104,7 +104,7 @@ export default {
         display block
         float left
         min-width 2rem
-        width calc(100% - 1rem)
+        width calc(100% - 2rem)
         margin .4rem .5rem
         padding .2rem .5rem
         transition .3s
@@ -121,6 +121,9 @@ export default {
         @media screen and (min-width $mq-md)
           border-radius 5px
           max-width 45%
+
+      @media screen and (min-width $mq-md)
+        padding-left .1rem
 
 
 
