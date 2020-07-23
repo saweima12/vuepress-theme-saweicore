@@ -96,19 +96,18 @@ export default {
       display inline-block
       margin 1rem auto
       width 100%
-      text-align center
 
       > a
-        // background var(--bodyBg)
-        box-sizing border-box
+        background var(--bodyBg)
         font-weight 500
         border-bottom 1px solid var(--borderColor)
-        display inline-block
+        display block
+        float left
         min-width 2rem
-        width 100%
-        margin .4rem .2rem
-        line-height 1.4rem
+        width calc(100% - 1rem)
+        margin .4rem .5rem
         padding .2rem .5rem
+        transition .3s
 
         > *
           display flex

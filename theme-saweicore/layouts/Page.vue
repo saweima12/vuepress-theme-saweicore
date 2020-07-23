@@ -48,10 +48,10 @@ export default {
       return this.$page.pid;
     },
     pageClassesMode() {
-      const { blogOption } = this.$themeConfig;
+      const { pageOption } = this.$themeConfig;
       const { frontmatter, pid } = this.$page;
       return frontmatter.mode
-         || (pid == 'post' ? blogOption.defaultPageMode : 'classic')
+         || (pid == 'post' ? pageOption.defaultPageMode : 'classic')
          || 'classic'
 
     },

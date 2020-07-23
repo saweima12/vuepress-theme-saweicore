@@ -31,9 +31,13 @@ module.exports = {
           }
         }
       },
+      pageOption: {
+        defaultPageMode: 'classic'   // classic || vocus
+
+      },
       // Plugin blog setting
       blogOption: {
-        defaultPageMode: 'classic'   // classic || vocus
+
       },
       // Comment system setting.
       comment: {

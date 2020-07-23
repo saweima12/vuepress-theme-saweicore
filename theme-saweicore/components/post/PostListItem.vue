@@ -59,6 +59,9 @@ export default {
   transition .3s
   @extend $card-box
 
+  p
+    margin 1rem 0 1.2rem
+
   .title
     font-size 1.4rem
     line-height 1.4rem
