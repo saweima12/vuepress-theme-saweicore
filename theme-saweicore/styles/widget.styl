@@ -15,6 +15,12 @@ $widget-more-link
       padding-right .8rem
 
 $rule-widget
+  max-height 12.5rem
+  overflow-y auto
+
+  @media screen and (min-width $mq-lg)
+    max-height 25rem
+
   a
     color var(--textColor)
     opacity .6

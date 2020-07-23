@@ -25,9 +25,7 @@
       </router-link>
     </div>
     <div class="more-link" v-if="shouldShowMoreLink">
-      <router-link
-        :to="`/tags/`"
-      >
+      <router-link :to="`/tags/`">
         More...
       </router-link>
     </div>
@@ -51,7 +49,7 @@ export default {
     },
     sliceNum() {
       const { blogOption } = this.$themeConfig;
-      return blogOption && blogOption.tagWidgetLength || 8;
+      return blogOption && blogOption.tagWidgetLength || 18;
     },
     shouldShowMoreLink() {
       return this.$route.meta.pid !== 'tag' && this.$tag.length > this.sliceNum;

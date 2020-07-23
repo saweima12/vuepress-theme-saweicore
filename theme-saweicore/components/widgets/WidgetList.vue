@@ -38,6 +38,7 @@ export default {
     width 100%
     display inline-block
     box-sizing border-box
+    max-height 100vh - 25rem
     padding 1rem
     margin 0 auto .8rem
     @extend $card-box

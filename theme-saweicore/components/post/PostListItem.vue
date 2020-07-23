@@ -7,12 +7,10 @@
             {{ post.title }}
           </router-link>
         </h1>
-        <PostInfo
-          :post="post"
-        />
+
       </header>
 
-      <div class="summary" v-if="post.excerpt">
+      <div class="summary" v-if="shouldShowSummary">
         <div v-html="post.excerpt"/>
       </div>
 
@@ -25,6 +23,9 @@
             class="tag"
           />
         </div>
+        <PostInfo
+          :post="post"
+        />
       </div>
     </div>
   </div>
@@ -49,19 +50,24 @@ export default {
       const { map } = this.$tag
       return getTags(this.post, map)
     },
+    shouldShowSummary() {
+      return this.post.excerpt
+      return false
+    }
   }
 }
 </script>
 
 <style lang="stylus">
 .post
-  padding 1rem 1.5rem .8rem
-  margin-bottom .5rem
+  box-sizing border-box
+  padding 1rem 1.5rem 1rem
+  margin-bottom 1rem
   transition .3s
   @extend $card-box
 
   p
-    margin 1rem 0 1.2rem
+    margin .5rem 0 1.2rem
 
   .title
     font-size 1.4rem
@@ -73,17 +79,20 @@ export default {
       &:hover
         color $accentColor
 
+  .post-header
+    padding .5rem 0
+
   .summary
     margin-top 0rem
     border-top 1px solid var(--borderColor)
     line-height 1.7rem
+
 
 .post
   &:hover
     box-shadow 0 2px 16px 0 rgba(0, 0, 0, 0.2)
 
   .tags
-    padding .5rem 0
 
     .tag
       box-sizing border-box

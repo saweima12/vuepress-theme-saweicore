@@ -11,7 +11,8 @@ module.exports = {
     defaultPageMode: 'classic'
   },
   blogOption: {
-
+    tagWidgetLength: 8,
+    categoryWidgetLength: 8,
   },
   comment: {
     disqus: false,
