@@ -15,7 +15,7 @@
       </div>
 
       <div class="post-footer">
-        <div class="tags">
+        <div class="tags" v-if="shouldShowTags">
           <NavLink
             v-for="tag in tags"
             :key="tag.text"
@@ -39,7 +39,8 @@ import { getTags } from '@theme/utils/postHandler'
 
 export default {
   props: {
-    post: { required: true }
+    post: { required: true },
+    mode: { required: true }
   },
   components: {
     PostInfo,
@@ -51,8 +52,10 @@ export default {
       return getTags(this.post, map)
     },
     shouldShowSummary() {
-      return this.post.excerpt
-      return false
+      return this.mode == 'normal' && this.post.excerpt;
+    },
+    shouldShowTags() {
+      return this.mode == 'normal';
     }
   }
 }
@@ -61,7 +64,7 @@ export default {
 <style lang="stylus">
 .post
   box-sizing border-box
-  padding 1rem 1.5rem 1rem
+  padding 1rem 1.5rem
   margin-bottom 1rem
   transition .3s
   @extend $card-box
@@ -74,6 +77,8 @@ export default {
     line-height 1.4rem
     font-weight 500
     padding .2rem 0
+    color var(--textColor)
+
     a
       color var(--textColor)
       &:hover
@@ -83,7 +88,7 @@ export default {
     padding .5rem 0
 
   .summary
-    margin-top 0rem
+    padding-top .2rem
     border-top 1px solid var(--borderColor)
     line-height 1.7rem
 
@@ -93,7 +98,6 @@ export default {
     box-shadow 0 2px 16px 0 rgba(0, 0, 0, 0.2)
 
   .tags
-
     .tag
       box-sizing border-box
       display inline-block
@@ -108,6 +112,17 @@ export default {
 
       &:hover, &.router-link-exact-active
         background $accentColor
+
+.mode-simple
+  .title
+    font-size 16px
+
+  .post
+    padding .2rem 1.5rem
+
+  .post-header
+    padding-bottom 0
+
 
 @media screen and (min-width $mq-lg)
   .post

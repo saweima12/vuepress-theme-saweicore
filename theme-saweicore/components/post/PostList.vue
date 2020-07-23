@@ -1,11 +1,12 @@
 <template>
-  <div class="post-list">
+  <div class="post-list" :class="staticClasses">
     <transition-group name="list">
       <PostListItem
         :class="`list-item`"
         v-for="post in postList"
         :key="post.key"
         :post="post"
+        :mode="mode"
       />
     </transition-group>
   </div>
@@ -16,6 +17,9 @@ import PostInfo from './PostInfo'
 import PostListItem from './PostListItem'
 
 export default {
+  props: {
+    mode: { default: 'normal' }
+  },
   components: {
     PostInfo,
     PostListItem,
@@ -23,6 +27,9 @@ export default {
   computed: {
     postList() {
       return this.$pagination.pages;
+    },
+    staticClasses() {
+      return [ `mode-${this.mode}` ]
     }
   }
 }
