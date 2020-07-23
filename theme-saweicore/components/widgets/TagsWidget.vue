@@ -24,11 +24,19 @@
         </span>
       </router-link>
     </div>
+    <div class="more-link" v-if="shouldShowMoreLink">
+      <router-link
+        :to="`/tags/`"
+      >
+        More...
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
 import TagIcon from '@theme/components/icons/TagIcon'
+import _ from 'loadsh'
 
 export default {
   components: {
@@ -36,10 +44,17 @@ export default {
   },
   computed: {
     tags() {
-      return this.$tag.list;
+      return this.mode == 'block' ? _.shuffle(this.$tag.pages).slice(0, this.sliceNum): this.$tag.pages;
     },
     mode() {
       return this.$route.meta.pid == 'tag' ? 'rule' : 'block'
+    },
+    sliceNum() {
+      const { blogOption } = this.$themeConfig;
+      return blogOption && blogOption.tagWidgetLength || 8;
+    },
+    shouldShowMoreLink() {
+      return this.$route.meta.pid !== 'tag' && this.$tag.length > this.sliceNum;
     },
     staticClasses() {
       return [ `mode-${this.mode}` ]
@@ -54,6 +69,9 @@ export default {
 .tags-widget
   .tags
     text-align justify
+
+  .more-link
+    @extend $widget-more-link
 
   .mode-block
     a

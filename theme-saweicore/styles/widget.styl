@@ -1,3 +1,19 @@
+$widget-more-link
+  display flex
+  padding .2rem 0
+  border-top 1px solid var(--borderColor)
+  text-align: right
+  justify-content: flex-end
+
+  a
+    display inline-block
+    color var(--textLightenColor)
+    font-size 16px
+    transition .2s
+
+    &:hover
+      padding-right .8rem
+
 $rule-widget
   a
     color var(--textColor)
@@ -13,6 +29,7 @@ $rule-widget
 
     &:hover
       padding-left .8rem
+      color $accentColor
 
     &:not(:last-child)
       border-bottom 1px solid #ddd
@@ -37,4 +54,3 @@ $rule-widget-amount
   padding: 0 .24rem
   font-size .6rem
   line-height 1rem
-

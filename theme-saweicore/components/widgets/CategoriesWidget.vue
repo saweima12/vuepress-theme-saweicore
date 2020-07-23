@@ -21,6 +21,13 @@
         </div>
       </router-link>
     </div>
+    <div class="more-link" v-if="shouldShowMoreLink">
+      <router-link
+        :to="`/categories/`"
+      >
+        More...
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -34,10 +41,16 @@ export default {
   },
   computed: {
     categories() {
-      const sliceNum = this.$themeConfig.categoriesWidget || 10
       const sortCategory = this.$category.list.sort((a, b) => a.length > b.length ? -1 : 1);
-      return sortCategory.slice(0, 10);
-    }
+      return sortCategory.slice(0, this.sliceNum);
+    },
+    sliceNum() {
+      const { blogOption } = this.$themeConfig;
+      return blogOption && blogOption.categoryWidgetLength || 10;
+    },
+    shouldShowMoreLink() {
+      return this.$route.meta.pid !== 'category' && this.$category.length > this.sliceNum;
+    },
   }
 }
 </script>
@@ -54,5 +67,8 @@ export default {
         @extend $rule-widget-name
       .amount
         @extend $rule-widget-amount
+  .more-link
+    @extend $widget-more-link
+
 
 </style>

@@ -17,13 +17,14 @@
 
     <div class="post-footer">
       <div class="tags">
-        <div
-          class="tag"
+
+        <NavLink
           v-for="tag in tags"
           :key="tag.text"
-        >
-          <NavLink :item="tag"/>
-        </div>
+          :item="tag"
+          class="tag"
+        />
+
       </div>
     </div>
   </div>
@@ -90,9 +91,13 @@ export default {
       background #999
       border-radius 3px
       line-height 1.2rem
+      color var(--mainBg)
 
-      a
-        color #fff
+      &:hover, &.router-link-exact-active
+        background $accentColor
+
+
+
 
 @media screen and (min-width $mq-lg)
   .post
