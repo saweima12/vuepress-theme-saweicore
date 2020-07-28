@@ -14,9 +14,12 @@
       v-show="showSidebar"
     />
 
+    <BodyBg v-if="$themeConfig.bodyBgImg" />
+
     <div
       class="sidebar-mask"
       @click="toggleSidebar(false)"/>
+
 
     <!-- All Context -->
     <div id="theme-content" class="theme-content">
@@ -31,6 +34,7 @@
 <script>
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import BodyBg from '@theme/components/BodyBg'
 import NavDrawer from '@theme/components/sidebar/NavDrawer'
 import EventBus from '@theme/utils/eventbus'
 import { getLength, isEmpty } from '@theme/utils'
