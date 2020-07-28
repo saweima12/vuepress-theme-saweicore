@@ -78,7 +78,7 @@ $navbar-hor-padding = 1.5rem
     vertical-align top
 
   .site-name
-    font-size 1.3rem
+    font-size 1.25rem
     font-weight 600
     color var(--textColor)
     position relative

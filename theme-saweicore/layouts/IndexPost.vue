@@ -1,19 +1,17 @@
 <template>
   <main class="index-post-page">
+    <div class="banner-wrapper" v-if="shouldShowBanner">
+      <Banner />
+    </div>
     <div class="main-wrapper">
       <DoubleColumnWrapper>
-
         <template v-slot:left>
           <PostList />
-          <div class="list-pagination">
-            <Pagination />
-          </div>
         </template>
 
         <template v-slot:right>
           <WidgetList :view="widgetView"/>
         </template>
-
       </DoubleColumnWrapper>
     </div>
   </main>
@@ -23,25 +21,27 @@
 import DoubleColumnWrapper from '@theme/components/DoubleColumnWrapper'
 import PostList from '@theme/components/post/PostList'
 import WidgetList from '@theme/components/widgets/WidgetList'
-import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
+import Banner from '@theme/components/Banner';
 
 export default {
   components: {
     DoubleColumnWrapper,
     PostList,
     WidgetList,
-    Pagination,
-
+    Banner
   },
   computed: {
     shouldShowAuthorWidget() {
       return this.$route.meta.pid == 'post';
     },
     shouldShowCategoriesWidget() {
-      return ['post', 'category'].indexOf(this.$route.meta.pid) > -1
+      return ['post', 'category'].indexOf(this.$route.meta.pid) > -1;
     },
     shouldShowTagsWidget() {
-      return ['post', 'tag'].indexOf(this.$route.meta.pid) > -1
+      return ['post', 'tag'].indexOf(this.$route.meta.pid) > -1;
+    },
+    shouldShowBanner() {
+      return this.$themeConfig.banner && this.$route.meta.pid == 'post';
     },
     widgetView() {
       return {
@@ -58,6 +58,14 @@ export default {
 @import "../styles/wrapper.styl"
 
 .index-post-page
+  .banner-wrapper
+    width 100%
+
+    .banner
+
+      background #000
+      min-height 450px
+
   .main-wrapper
     transition .2s
     max-width $indexPageWidth
@@ -67,20 +75,5 @@ export default {
 
     @media screen and (min-width $mq-lg)
       margin .5rem auto
-
-.list-pagination
-  width 100%
-
-  .pagination
-    width 100%
-    text-align center
-
-    > li
-      display inline-block
-
-@media screen and (min-width $mq-md)
-  .list-pagination
-    .pagination
-      text-align left
 
 </style>

@@ -9,12 +9,17 @@
         :mode="mode"
       />
     </transition-group>
+    <div class="list-pagination">
+      <Pagination v-if="shouldShowPagination"/>
+    </div>
   </div>
 </template>
 
 <script>
 import PostInfo from './PostInfo'
 import PostListItem from './PostListItem'
+import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
+
 
 export default {
   props: {
@@ -23,13 +28,18 @@ export default {
   components: {
     PostInfo,
     PostListItem,
+    Pagination
   },
   computed: {
     postList() {
-      return this.$pagination.pages;
+      return this.$pagination.pages || this.$post.pages;
+    },
+    shouldShowPagination() {
+      return this.$pagination
+        && (this.$pagination.hasNext || this.$pagination.hasPrev)
     },
     staticClasses() {
-      return [ `mode-${this.mode}` ]
+      return `mode-${this.mode}`
     }
   }
 }
@@ -57,5 +67,26 @@ export default {
     position: absolute;
     opacity 0
     left 0
+
+.list-pagination
+  width 100%
+
+  .pagination
+    width 100%
+    text-align center
+
+    > li
+      display inline-block
+
+@media screen and (min-width $mq-lg)
+  .post-list.mode-simple
+      padding 0 1rem
+      width $content-width
+
+@media screen and (min-width $mq-md)
+  .list-pagination
+    .pagination
+      text-align left
+
 
 </style>

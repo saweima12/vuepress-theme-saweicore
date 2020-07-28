@@ -52,13 +52,12 @@ export default {
 
 <style lang="stylus">
 .author-widget
-
   .avatar
     box-sizing border-box
-    width 100%
-    padding .5rem 1rem 0 1rem
+    padding .5rem 1.5rem 0
     margin 0 auto
     img
+      border-radius 5px
       border 1px solid #aaa
 
   .author-info

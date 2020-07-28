@@ -69,14 +69,16 @@ export default {
   transition .3s
   @extend $card-box
 
+  .item-wrapper
+    width 100%
+
   p
     margin .5rem 0 1.2rem
 
   .title
-    font-size 1.4rem
-    line-height 1.4rem
+    font-size 1.28rem
+    line-height 36px
     font-weight 500
-    padding .2rem 0
     color var(--textColor)
 
     a
@@ -104,14 +106,15 @@ export default {
       vertical-align middle
       margin 0 .5rem .6rem 0
       padding .3rem
-      background #999
+      background var(--bodyBg)
       font-size 13px
       border-radius 3px
       line-height 1.2rem
-      color var(--mainBg)
+      color $accentColor
+      transition .2s
 
       &:hover, &.router-link-exact-active
-        background $accentColor
+        background var(--customBlockBg)
 
 .mode-simple
   .title
@@ -122,6 +125,13 @@ export default {
 
   .post-header
     padding-bottom 0
+
+  .summary, .tags
+    display none
+
+  .post-footer
+    display flex
+    border-top 1px solid var(--borderColor)
 
 
 @media screen and (min-width $mq-lg)

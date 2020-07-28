@@ -9,7 +9,6 @@ module.exports = (themeConfig) => ({
       itemLayout: 'Page',
       title: themeConfig.listTitle || 'Home',
       pagination: {
-        lengthPerPage: 2,
         layout: 'IndexPost'
       },
     },

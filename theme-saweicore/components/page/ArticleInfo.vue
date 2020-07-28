@@ -27,24 +27,16 @@
 
 <script>
 import { FolderIcon, CalendarIcon } from 'vue-feather-icons';
-import { dateFormat } from '@theme/utils'
-import { getCategories } from '@theme/utils/postHandler';
 
 export default {
+  props: [
+    'categories',
+    'date'
+  ],
   components: {
     CalendarIcon,
     FolderIcon,
   },
-  computed: {
-    categories() {
-      const { map } = this.$category;
-      return getCategories(this.$page, map);
-    },
-    date() {
-      const { date } = this.$page.frontmatter;
-      return date ? dateFormat(date) : null;
-    }
-  }
 }
 </script>
 

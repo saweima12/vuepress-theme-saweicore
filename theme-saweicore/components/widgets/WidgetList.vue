@@ -64,7 +64,7 @@ export default {
 
 @media screen and (min-width $mq-md)
   .widget-list
-    width 255px
+    width 100%
     margin-left .5rem
 
     .author-widget

@@ -73,20 +73,19 @@ export default {
   color #999
   font-size .7rem
   line-height 1.2rem
-  padding .5rem 0 .3rem
-
-
+  padding .3rem 0
 
   a
     color #999
-
 
   > *
     position relative
     display inline-block
     line-height 1.4rem
-    margin-right 1.2rem
+    margin-right .7rem
 
+    @media screen and (min-width $mq-md)
+      margin-right 1.4rem
 
   .categories
 
