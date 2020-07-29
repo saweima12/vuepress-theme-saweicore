@@ -17,18 +17,31 @@
         </header>
         <Content class="context"/>
         <footer class="article-footer">
-          <router-link
-            class="tag"
-            v-for="tag in tags"
-            :key="tag.text"
-            :to="tag.path"
-          >
-            <div class="tag-block">
-              {{ tag.text }}
+          <div class="tags-section">
+            <router-link
+              class="tag"
+              v-for="tag in tags"
+              :key="tag.text"
+              :to="tag.path"
+            >
+              <div class="tag-block">
+                {{ tag.text }}
+              </div>
+            </router-link>
+          </div>
+
+          <div class="extension-section" v-if="shouldShowExtension">
+            <div class="last-updated">
+              Last Updated:
+              <time :datetime="$page.lastUpdated">
+                {{ $page.lastUpdated }}
+              </time>
             </div>
-          </router-link>
+
+          </div>
 
         </footer>
+
       </article>
       <!-- Author Field -->
       <section
@@ -87,6 +100,9 @@ export default {
          || (pid == 'post' ? pageOption.defaultPageMode : 'classic')
          || 'classic'
     },
+    shouldShowExtension() {
+      return this.$page.lastUpdated;
+    },
     isArticle() {
       return this.pid == 'post'
     },
@@ -129,19 +145,7 @@ export default {
   > *
     @extend $content-wrapper
 
-// ArticleTag style
-.article-wrapper
-  .tag
-    display inline-block
-    margin-right .4em
 
-    .tag-block
-      display block
-      padding .5rem
-      background var(--bodyBg)
-      margin-bottom 1rem
-      &:hover
-        background var(--customBlockBg)
 
 @media screen and (min-width $mq-lg)
   .sidebar-open:not(.no-sidebar)

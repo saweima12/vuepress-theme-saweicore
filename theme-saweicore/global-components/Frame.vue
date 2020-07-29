@@ -46,7 +46,8 @@ export default {
   components: {
     Navbar,
     Footer,
-    NavDrawer
+    NavDrawer,
+    BodyBg
   },
   data(){
     return {

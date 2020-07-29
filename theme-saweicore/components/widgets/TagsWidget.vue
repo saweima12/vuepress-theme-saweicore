@@ -83,10 +83,11 @@ export default {
       background #999
       border-radius 3px
       transition .2s ease
-      padding .2rem .4rem
-      min-width 2rem
+      padding 0 .4rem
+      min-width 2em
       margin 0 .2rem 1rem
       line-height 1.4rem
+      vertical-align middle
 
       &:hover
         background var(--textLightenColor)

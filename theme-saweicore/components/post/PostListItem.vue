@@ -92,7 +92,7 @@ export default {
   .summary
     padding-top .2rem
     border-top 1px solid var(--borderColor)
-    line-height 1.7rem
+    line-height 1.7em
 
 
 .post

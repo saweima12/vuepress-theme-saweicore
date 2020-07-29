@@ -4,6 +4,29 @@
   background transparent
   font-family Microsoft JhengHei fixed,Helvetica Neue,Microsoft JhengHei,Helvetica,Arial,sans-serif
 
+  .tag
+    display inline-block
+    margin-right .4em
+
+    .tag-block
+      display block
+      padding .5rem
+      background var(--bodyBg)
+      margin-bottom 1rem
+      &:hover
+        background var(--customBlockBg)
+
+  .extension-section
+    display flex
+    justify-content flex-end
+    padding .5rem 0 1rem
+
+    .last-updated
+      font-size 14px
+      color #22979B
+      time
+        color $accentColor
+
   .content-wrapper
     .article-info
       border-bottom 1px solid var(--borderColor)
@@ -33,6 +56,9 @@
       padding 5px 0
       font-size 28px
       font-weight 600
+
+
+
 
 // Vocus mdoe.
 .article-wrapper.vocus

@@ -1,7 +1,7 @@
 <template>
   <div class="body-bg"
     :style="{
-        background: `url(${bodyBgImg})`
+        background: `url(${bodyBgImg}) center center / cover no-repeat`
       }">
   </div>
 </template>
