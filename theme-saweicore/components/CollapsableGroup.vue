@@ -2,7 +2,7 @@
   <div class="collapsable-group">
     <h1
       class="title"
-      @click="eventBus.$emit('toggle-archive-group', item)"
+      @click="eventBus.$emit(eventCode, item)"
     >
       {{ item.title }}
       <span
@@ -15,17 +15,7 @@
       class="item-list"
       v-show="isOpen"
     >
-      <li
-        class="item-link"
-        v-for="(section, section_key) in item.sections.map"
-        :key="section_key"
-      >
-        <router-link
-          :to="section.page.path"
-        >
-          {{ section.title }}
-        </router-link>
-      </li>
+      <slot />
     </ul>
   </div>
 </template>
@@ -35,10 +25,10 @@ import EventBus from '@theme/utils/eventbus';
 export default {
   props: {
     item: {
-      required: true
+      required: true,
     },
-    collapsable: {
-      required: false,
+    eventCode: {
+      required: true,
     }
   },
   computed: {
@@ -55,14 +45,13 @@ export default {
     toggleSelf(to) {
       this.isOpen = typeof to === 'boolean' ? to : !this.isOpen;
     },
-    onToggleArchiveGroup(item) {
+    onToggleCollapsableGroup(item) {
       const result = (item == this.item) && !this.isOpen;
       this.toggleSelf(result)
     }
   },
   created() {
-    EventBus.$on('toggle-archive-group', this.onToggleArchiveGroup);
-
+    EventBus.$on(this.eventCode, this.onToggleCollapsableGroup);
   },
   mounted() {
     if (this.$page.key in this.item.sections.map) {
@@ -70,7 +59,7 @@ export default {
     }
   },
   destroyed() {
-    EventBus.$off('toggle-archive-group');
+    EventBus.$off(this.eventCode);
   }
 }
 </script>

@@ -10,22 +10,35 @@
       class="chapter-list"
       v-if="!isEmpty(archive)"
     >
-      <ArchiveGroup
-        v-for="(chapter,key) in archive.chapters"
-        :item="chapter"
+      <CollapsableGroup
+        v-for="(item, key) in archive.chapters"
+        :item="item"
         :key="key"
-      />
+        :eventCode="`toggle-archive-group`"
+      >
+        <li
+          class="item-link"
+          v-for="(section, section_key) in item.sections.map"
+          :key="section_key"
+        >
+          <router-link
+            :to="section.page.path"
+          >
+            {{ section.title }}
+          </router-link>
+        </li>
+      </CollapsableGroup>
     </div>
   </div>
 </template>
 
 <script>
 import { isEmpty } from '@theme/utils'
-import ArchiveGroup from './ArchiveGroup';
+import CollapsableGroup from '@theme/components/CollapsableGroup';
 
 export default {
   components: {
-    ArchiveGroup
+    CollapsableGroup,
   },
   computed: {
     archive() {
