@@ -3,8 +3,8 @@ const nav = require("./config/nav")
 module.exports = {
     title: 'SaweiCore Stu.',
     description: '',
-    theme: 'vuepress-theme-saweicore',
-    // theme: require.resolve('../../theme-saweicore'), // use local theme.
+    // theme: 'vuepress-theme-saweicore',
+    theme: require.resolve('../../theme-saweicore'), // use local theme.
 
     locale: {
       '/' : "zh-TW"
@@ -12,9 +12,8 @@ module.exports = {
 
     themeConfig: {
       listTitle: 'Home',  // PostList Page's title.
-      logo: "/img/logo.png",
-
       nav: nav,
+      logo: "/img/logo.png",
       author: {
         // base author setting.
         avatar: "https://avatars3.githubusercontent.com/u/62002212?s=400&u=632d38b62b5c3937c1fa35ea1ca06ab8e180eaf9&v=4",
@@ -31,23 +30,21 @@ module.exports = {
           }
         }
       },
-      pageOption: {
-        defaultPageMode: 'classic'   // classic || vocus
+      // pageOption: {
+      //   defaultPageMode: 'classic'   // classic || vocus
 
-      },
-      // Plugin blog setting
+      // },
+      // // Plugin blog setting
       blogOption: {
-
+        // comment: {
+          // service: 'disqus',
+          // shortname: 'saweima'
+        // }
       },
-      // Comment system setting.
-      comment: {
-        // disqus: true,
-        // vssue: true,
-      },
+      // searchOption: {
+      //   searchMaxSuggestions: 10
+      // },
     },
   plugins: [
-    // ['vuepress-plugin-disqus', {
-    //   shortname: ''
-    // }],
   ]
 }
