@@ -94,6 +94,9 @@ export default {
     border-top 1px solid var(--borderColor)
     line-height 1.7em
 
+    @media screen and (min-width $mq-md)
+      font-size .95rem
+
 
 .post
   &:hover

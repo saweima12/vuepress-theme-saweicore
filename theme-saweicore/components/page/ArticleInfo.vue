@@ -72,7 +72,7 @@ export default {
         &:hover
           color $accentColor
 
-        &:nth-child(even):before
+        &:not(:first-child):before
           content '/'
           margin 0 .2rem
 

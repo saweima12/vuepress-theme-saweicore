@@ -55,8 +55,7 @@
     <slot name="bottom"/>
 
     <!-- Comment Field -->
-    <Disqus v-if="isDisqusOpen" />
-    <Vssue v-if="isVssueOpen"/>
+    <Comment/>
 
   </main>
 </template>
@@ -108,18 +107,6 @@ export default {
     },
     isCustom() {
       return this.$page.frontmatter.custom === true;
-    },
-    isDisqusOpen() {
-      return this.$page.frontmatter.disqus ||
-            (this.$site.themeConfig.comment
-            && this.$site.themeConfig.comment.disqus === true
-            && this.isArticle)
-    },
-    isVssueOpen() {
-      return this.$page.frontmatter.vssue ||
-            (this.$site.themeConfig.comment
-            && this.$site.themeConfig.comment.vssue === true
-            && this.isArticle)
     },
   },
 }

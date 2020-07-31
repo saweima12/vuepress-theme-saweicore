@@ -28,6 +28,7 @@
           <GithubIcon />
         </div>
       </a>
+
     </div>
   </div>
 </template>
@@ -54,8 +55,9 @@ export default {
 .author-widget
   .avatar
     box-sizing border-box
-    padding .5rem 1.5rem 0
     margin 0 auto
+    width 180px
+    height 180px
     img
       border-radius 5px
       border 1px solid #aaa
@@ -78,15 +80,25 @@ export default {
     background var(--mainBg)
     display flex
     justify-content center
-    padding .2rem 0 0
+    padding .8rem 0 0
+    margin-top .5rem
+    border-top 1px solid #eee
 
-  .social
-    color #666
-    cursor pointer
-    display inline-block
-    width 25px
-    transition .2s ease
-    margin 0 1rem
+    a
+      width 100%
+      text-align center
+
+    a:not(:last-child)
+      border-right 1px solid var(--borderColor)
+
+
+    .social
+      color #666
+      cursor pointer
+      display inline-block
+      width 25px
+      transition .2s ease
+      margin 0 1rem
 
 
 .social.plurk:hover
