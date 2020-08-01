@@ -1,15 +1,33 @@
 <template>
   <div class="author-info">
-    <div class="avatar">
-      <img :src="author.avatar">
-    </div>
-    <div class="info">
-      <div class="name">
-        {{ author.name }}
+    <!-- mobile -->
+    <div class="mobile">
+      <div class="header">
+        <div class="avatar">
+          <img :src="author.avatar">
+        </div>
+        <div class="name">
+          {{ author.name }}
+        </div>
       </div>
+
       <div class="desc">
         {{ author.desc }}
       </div>
+    </div>
+    <!-- 576px up -->
+    <div class="tablet">
+      <div class="avatar">
+          <img :src="author.avatar">
+        </div>
+        <div class="info">
+          <div class="name">
+            {{ author.name }}
+          </div>
+          <div class="desc">
+            {{ author.desc }}
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -26,21 +44,49 @@ export default {
 
 <style lang="stylus">
 .author-info
-  display flex
   padding .5rem 0
 
-  .avatar
-    display inline-block
-    width 15rem
+  .name
+    font-size 1.2rem
+    font-weight bold
 
-  .info
-    padding-left 1rem
+  .mobile
 
-    .name
-      font-size 1.2rem
-      font-weight bold
+    .header
+      display flex
+      align-items center
+      margin-bottom .5rem
+
+    .avatar
+      max-width 50px
+      border 1px solid var(--borderColor)
+      border-radius 50%
+      overflow hidden
+      margin-right 1em
+
+  .tablet
+    display none
+    align-items center
+
+    .info
+      padding-left 1rem
+
+    .avatar
+        display inline-block
+        max-width 135px
 
     .desc
       padding .5rem 0
+
+  @media screen and (min-width $mq-sm)
+    .mobile
+      display none
+
+    .tablet
+      display flex
+
+
+
+
 
 </style>

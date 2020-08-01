@@ -58,6 +58,7 @@ export default {
     margin 0 auto
     width 180px
     height 180px
+    padding-bottom 26.66%
     img
       border-radius 5px
       border 1px solid #aaa

@@ -36,6 +36,7 @@
     "vuepress-plugin-smooth-scroll": "0.0.9"
   },
   "devDependencies": {
-    "moment": "^2.27.0"
+    "moment": "^2.27.0",
+    "vuepress-plugin-seo": "^0.1.4"
   }
 }
