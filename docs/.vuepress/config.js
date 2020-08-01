@@ -12,6 +12,7 @@ module.exports = {
 
     themeConfig: {
       listTitle: 'Home',  // PostList Page's title.
+      domain: 'https://saweima12.github.io',
       nav: nav,
       logo: "/img/logo.png",
       author: {
@@ -40,6 +41,9 @@ module.exports = {
           // service: 'disqus',
           // shortname: ''
         // }
+      },
+      seoOptions: {
+
       },
       // searchOption: {
       //   searchMaxSuggestions: 10
