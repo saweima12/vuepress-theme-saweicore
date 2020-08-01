@@ -59,6 +59,7 @@ export default {
 @import "../../styles/widget.styl"
 
 .categories-widget
+  padding 1rem
   .categories
     @extend $rule-widget
 

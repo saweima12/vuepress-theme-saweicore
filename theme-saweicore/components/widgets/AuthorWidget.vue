@@ -80,13 +80,15 @@ export default {
     background var(--mainBg)
     display flex
     justify-content center
-    padding .8rem 0 0
     margin-top .5rem
     border-top 1px solid #eee
 
     a
+      padding .5rem 0
       width 100%
       text-align center
+      transition .5s
+
 
     a:not(:last-child)
       border-right 1px solid var(--borderColor)
@@ -101,10 +103,15 @@ export default {
       margin 0 1rem
 
 
-.social.plurk:hover
-  color #FF9975
+.author-widget
+  .socials
+    a:hover
+      background var(--bodyBg)
 
-.social.github:hover
-  color #000
+      .social.plurk
+        color #FF9975
+
+      .social.github
+        color #000
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <main
     class="page"
-    :class="{ 'custom' : isCustom }"
+    :class="[`mode-${pageMode}`]"
   >
     <slot name="top" />
     <!-- main content -->
@@ -105,8 +105,9 @@ export default {
     isArticle() {
       return this.pid == 'post'
     },
-    isCustom() {
-      return this.$page.frontmatter.custom === true;
+    pageMode() {
+      const { frontmatter } = this.$page;
+      return frontmatter.page_mode || 'narrow';
     },
   },
 }
@@ -121,9 +122,14 @@ export default {
   img
     max-width 100%
 
+  &.mode-wide
+    .content-wrapper
+      max-width 840px
+
   > *:not(.article-wrapper)
     transition .2s ease
     @extend $content-wrapper, $card-box
+
 
 // PageContent style
 .article-wrapper
@@ -131,6 +137,8 @@ export default {
 
   > *
     @extend $content-wrapper
+
+
 
 
 

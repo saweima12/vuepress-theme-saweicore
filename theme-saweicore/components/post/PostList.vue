@@ -23,7 +23,7 @@ import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
 
 export default {
   props: {
-    mode: { default: 'normal' }
+    mode: { default: 'normal' },
   },
   components: {
     PostInfo,
@@ -32,7 +32,8 @@ export default {
   },
   computed: {
     postList() {
-      return this.$pagination.pages || this.$post.pages;
+      return ( this.$pagination && this.$pagination.pages)
+          || this.$post.pages;
     },
     shouldShowPagination() {
       return this.$pagination

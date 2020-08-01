@@ -65,6 +65,7 @@ export default {
 @import "../../styles/widget.styl"
 
 .tags-widget
+  padding 1rem
   .tags
     text-align justify
 
