@@ -1,7 +1,8 @@
 ---
 title: About
 layout: Page
-permalink: /about
+permalink: /about/
+page_mode: wide
 ---
 
 Yep, this page will talk about me.

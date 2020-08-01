@@ -3,8 +3,8 @@ const nav = require("./config/nav")
 module.exports = {
     title: 'SaweiCore Stu.',
     description: '',
-    // theme: 'vuepress-theme-saweicore',
-    theme: require.resolve('../../theme-saweicore'), // use local theme.
+    theme: 'vuepress-theme-saweicore',
+    // theme: require.resolve('../../theme-saweicore'), // use local theme.
 
     locale: {
       '/' : "zh-TW"
@@ -38,7 +38,7 @@ module.exports = {
       blogOption: {
         // comment: {
           // service: 'disqus',
-          // shortname: 'saweima'
+          // shortname: ''
         // }
       },
       // searchOption: {
@@ -46,5 +46,6 @@ module.exports = {
       // },
     },
   plugins: [
+    // ['@vuepress/last-updated']
   ]
 }

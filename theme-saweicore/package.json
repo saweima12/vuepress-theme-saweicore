@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-saweicore",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Custom theme for saweima's blog.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/saweima12/vuepress-theme-saweicore.git"
   },
   "keywords": [
-    "vuepress"
+    "vuepress",
+    "vuepress-theme"
   ],
   "author": "Saweima",
   "license": "MIT",
