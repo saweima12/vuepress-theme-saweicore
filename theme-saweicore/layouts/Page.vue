@@ -55,7 +55,7 @@
     <slot name="bottom"/>
 
     <!-- Comment Field -->
-    <Comment/>
+    <Comment v-if="$page.comment !== false"/>
 
   </main>
 </template>
@@ -107,6 +107,7 @@ export default {
     },
     pageMode() {
       const { frontmatter } = this.$page;
+      // narrow || wide
       return frontmatter.page_mode || 'narrow';
     },
   },
