@@ -23,8 +23,8 @@ module.exports = (themeConfig, ctx) => {
       {}, defualtBlogPluginOptions(themeConfig), themeConfig.blogOption
     )
     // console.log(themeConfig)
-    final_themeConfig = Object.assign({}, defaultThemeOptions, themeConfig);
-    Object.assign(themeConfig, final_themeConfig);
+    finalThemeConfig = Object.assign({}, defaultThemeOptions, themeConfig);
+    Object.assign(themeConfig, finalThemeConfig);
 
     return {
         // extend: '@vuepress/theme-default',
@@ -36,7 +36,6 @@ module.exports = (themeConfig, ctx) => {
           ['vuepress-plugin-smooth-scroll'],
           ['@vuepress/plugin-blog', blogPluginOptions],
           ['@vuepress/plugin-search', themeConfig.searchOption],
-
           ...defaultContainerOptions,
         ],
     };
