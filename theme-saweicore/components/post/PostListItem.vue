@@ -10,9 +10,9 @@
 
       </header>
 
-      <div class="summary" v-if="shouldShowSummary">
+      <summary class="summary" v-if="shouldShowSummary">
         <div v-html="post.excerpt"/>
-      </div>
+      </summary>
 
       <div class="post-footer">
         <div class="tags" v-if="shouldShowTags">
@@ -93,10 +93,6 @@ export default {
     padding-top .2rem
     border-top 1px solid var(--borderColor)
     line-height 1.7em
-
-    @media screen and (min-width $mq-md)
-      font-size .95rem
-
 
 .post
   &:hover

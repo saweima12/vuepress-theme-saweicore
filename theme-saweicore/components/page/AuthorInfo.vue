@@ -51,18 +51,20 @@ export default {
     font-weight bold
 
   .mobile
-
     .header
       display flex
       align-items center
-      margin-bottom .5rem
+      margin-bottom .7rem
 
     .avatar
-      max-width 50px
+      max-width 45px
       border 1px solid var(--borderColor)
       border-radius 50%
       overflow hidden
       margin-right 1em
+
+    .desc
+      line-height 1.6
 
   .tablet
     display none
