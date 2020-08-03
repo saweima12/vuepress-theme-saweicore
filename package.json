@@ -1,12 +1,12 @@
 {
   "name": "vuepress-saweicore-blog",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "custom vuepress blog theme.",
   "main": "index.js",
   "dependencies": {
     "lodash": ">=4.17.19",
     "vuepress": "^1.4.0",
-    "vuepress-theme-saweicore": "^0.1.7"
+    "vuepress-theme-saweicore": "^0.2.0"
   },
   "devDependencies": {
     "@goy/vuepress-plugin-svg-icons": "^4.2.0",
@@ -25,7 +25,7 @@
     "vuepress-plugin-smooth-scroll": "0.0.9"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-theme": "npm uninstall vuepress-theme-saweicore && npm install vuepress-theme-saweicore",
     "docs:dev": "vuepress dev docs --debug",
     "docs:build": "vuepress build docs",
     "vuepress": "vuepress"
