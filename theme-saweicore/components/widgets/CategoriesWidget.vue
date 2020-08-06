@@ -45,8 +45,8 @@ export default {
       return sortCategory.slice(0, this.sliceNum);
     },
     sliceNum() {
-      const { blogOption } = this.$themeConfig;
-      return blogOption && blogOption.categoryWidgetLength || 10;
+      const { widgetOption } = this.$themeConfig;
+      return widgetOption && widgetOption.categoryWidgetLength || 10;
     },
     shouldShowMoreLink() {
       return this.$route.meta.pid !== 'category' && this.$category.length > this.sliceNum;
