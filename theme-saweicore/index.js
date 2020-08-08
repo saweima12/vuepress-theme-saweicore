@@ -31,14 +31,13 @@ module.exports = (themeConfig, ctx) => {
     Object.assign(themeConfig, finalThemeConfig);
     return {
         // extend: '@vuepress/theme-default',
-        // extendPageData: gen_summary,disqus
         alias: defaultAlias,
 
         plugins: [
+          ['vuepress-plugin-smooth-scroll'],
+          ['vuepress-plugin-seo', seoPluginOptions],
           ['@vuepress/plugin-blog', blogPluginOptions],
           ['@vuepress/plugin-search', themeConfig.searchOption],
-          ['vuepress-plugin-seo', seoPluginOptions],
-          ['vuepress-plugin-smooth-scroll', {}],
           ['@vuepress/nprogress', {}],
           ...defaultContainerOptions,
         ],

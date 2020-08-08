@@ -55,7 +55,7 @@
     <slot name="bottom"/>
 
     <!-- Comment Field -->
-    <Comment v-if="$page.comment !== false"/>
+    <Comment v-if="$page.frontmatter.comment !== false"/>
 
   </main>
 </template>

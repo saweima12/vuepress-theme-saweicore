@@ -36,4 +36,7 @@ module.exports = (themeConfig) => ({
       scopeLayout: 'IndexPost',
     }
   ],
+  sitemap: {
+    hostname:themeConfig.domain
+  }
 });
