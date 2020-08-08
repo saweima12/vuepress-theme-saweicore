@@ -27,8 +27,9 @@ module.exports = (themeConfig, ctx) => {
       {}, defaultSeoOptions, themeConfig.seoOptions
     )
     // console.log(themeConfig)
-    finalThemeConfig = Object.assign({}, defaultThemeOptions, themeConfig);
-    Object.assign(themeConfig, finalThemeConfig);
+    finalThemeConfig = Object.assign({}, defaultThemeOptions(ctx), themeConfig);
+    themeConfig = Object.assign(themeConfig, finalThemeConfig);
+
     return {
         // extend: '@vuepress/theme-default',
         alias: defaultAlias,

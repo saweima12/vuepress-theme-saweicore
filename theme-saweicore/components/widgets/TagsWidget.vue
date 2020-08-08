@@ -48,8 +48,8 @@ export default {
       return this.$route.meta.pid == 'tag' ? 'rule' : 'block'
     },
     sliceNum() {
-      const { blogOption } = this.$themeConfig;
-      return blogOption && blogOption.tagWidgetLength || 18;
+      const { widgetOption } = this.$themeConfig;
+      return widgetOption && widgetOption.tagWidgetLength || 18;
     },
     shouldShowMoreLink() {
       return this.$route.meta.pid !== 'tag' && this.$tag.length > this.sliceNum;

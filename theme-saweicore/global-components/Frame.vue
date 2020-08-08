@@ -124,11 +124,13 @@ export default {
     // listen toggle-sidebar event.
     this.checkSidebarOpenOfclientWidth();
     // debug message
-    console.log("obj",this);
-    console.log("route",this.$route)
-    console.log("page", this.$page)
-    // console.log("pagination", this.$pagination)
-    console.log(this.stateClasses);
+    if (!this.$themeConfig.isProd) {
+      console.log("obj",this);
+      console.log("route",this.$route)
+      console.log("page", this.$page)
+      // console.log("pagination", this.$pagination)
+      console.log(this.stateClasses);
+    }
 
     this.$router.afterEach(() => {
       this.checkSidebarOpenOfclientWidth();
