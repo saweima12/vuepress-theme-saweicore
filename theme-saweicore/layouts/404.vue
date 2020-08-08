@@ -39,17 +39,15 @@ export default {
   align-items center
   height 60vh
   .content-wrapper
+    max-width 100%
     height 50%
     margin-top 5rem
     @extend $content-wrapper
 
     .title
-      text-align center
-      font-style italic
-      font-size 42px
+     font-size 42px
 
     .msg
-      text-align center
       font-size 24px
       font-weight 400
 
