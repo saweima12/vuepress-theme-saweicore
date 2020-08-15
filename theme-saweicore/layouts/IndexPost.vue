@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import DoubleColumnWrapper from '@theme/components/DoubleColumnWrapper'
+import DoubleColumnWrapper from '@theme/components/common/DoubleColumnWrapper'
 import PostList from '@theme/components/post/PostList'
 import WidgetList from '@theme/components/widgets/WidgetList'
 import Banner from '@theme/components/Banner';

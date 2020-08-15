@@ -32,7 +32,7 @@
 <script>
 import SearchBox from '@SearchBox';
 import NavLinks from '@theme/components/NavLinks';
-import MenuButton from '@theme/components/MenuButton';
+import MenuButton from '@theme/components/common/MenuButton';
 
 export default {
   components: {

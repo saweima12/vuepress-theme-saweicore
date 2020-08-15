@@ -34,7 +34,7 @@
 
 <script>
 import { isEmpty } from '@theme/utils'
-import CollapsableGroup from '@theme/components/CollapsableGroup';
+import CollapsableGroup from '@theme/components/common/CollapsableGroup';
 
 export default {
   components: {
