@@ -12,7 +12,7 @@ module.exports = {
 
     themeConfig: {
       listTitle: 'Home',  // PostList Page's title.
-      domain: 'https://saweima12.github.io',
+      domain: 'https://saweicore.com',
       nav: nav,
       logo: "/img/logo.png",
       author: {
@@ -22,20 +22,18 @@ module.exports = {
         summary: "絕望工程師",
         desc: "喜歡新奇事物的探索者，長年在網路上挖掘新資訊及技巧，小到特定知識大到人生哲學， \
             想要更多的知識、更多的經驗，現職為旅遊業工程師。 主司後端、但對前端也有所涉略。",
-        socials: {
-          plurk: {
-            link: "https://plurk.com/tassis"
-          },
-          github: {
-            link: "https://github.com/saweima12"
-          }
-        }
+        socials: [
+          { text: 'plurk', link: 'https://plurk.com/tassis', component: 'PlurkIcon'},
+          { text: 'github', link: 'https://github.com/saweima12', component: 'GithubIcon'},
+        ]
       },
+      // fofTips: [
+      // ],
       // pageOption: {
       //   defaultPageMode: 'classic'   // classic || vocus
 
       // },
-      // // Plugin blog setting
+      // Plugin blog setting
       blogOption: {
         // comment: {
           // service: 'disqus',
@@ -45,9 +43,10 @@ module.exports = {
       seoOptions: {
 
       },
-      // searchOption: {
-      //   searchMaxSuggestions: 10
-      // },
+
+      searchOption: {
+        searchMaxSuggestions: 10
+      },
     },
   plugins: [
     // ['@vuepress/last-updated']
