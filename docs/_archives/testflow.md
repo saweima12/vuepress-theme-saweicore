@@ -1,11 +1,11 @@
 ---
 title: "TestFlow"
 archive:
-  id: "yu-gi-oh"
+  id: "testflow"
   chapters:
     1: FlowA
-    2: Airflow
-    0: 未分類
+    2: FlowB
+    -1: Uncategorized
 ---
 
 weeed
