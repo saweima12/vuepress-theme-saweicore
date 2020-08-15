@@ -16,4 +16,10 @@ module.exports = ctx => ({
     tagWidgetLength: 8,
     categoryWidgetLength: 8,
   },
+  fofTips: [
+    '看來這個網址有問題...?',
+    '喔不...出現了些問題....',
+    '什麼都沒找到、什麼都沒看到。',
+    '滅びのバーストストリーム',
+  ],
 });

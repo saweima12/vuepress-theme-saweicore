@@ -14,17 +14,17 @@
 </template>
 
 <script>
-const msgs = [
-  '看來這個網址有問題...?',
-  '喔不...出現了些問題....',
-  '什麼都沒找到、什麼都沒看到。',
-  '滅びのバーストストリーム',
-]
+
 
 export default {
+  computed: {
+    fofMsg() {
+      return this.$themeConfig.fofTips || msgs
+    },
+  },
   methods: {
     getMsg() {
-      return msgs[Math.floor(Math.random() * msgs.length)]
+      return this.fofMsg[Math.floor(Math.random() * this.fofMsg.length)]
     }
   }
 }
