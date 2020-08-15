@@ -59,9 +59,10 @@ export default {
   },
   computed: {
     shouldShowSidebar() {
-      const { frontmatter, headers } = this.$page;
+      const { frontmatter, pid } = this.$page;
       const { map } = this.$archive;
       return ( frontmatter.sidebar !== false
+              && pid !== 'archive'
               && frontmatter.archive
               && frontmatter.archive.id in map)
     },

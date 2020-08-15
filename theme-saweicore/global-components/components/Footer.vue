@@ -3,7 +3,7 @@
     <span class="info">
       Theme by <a href="https://www.plurk.com/tassis">Saweima</a> |
       Copyright © 2020 |
-      reference from <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="Vdoing">Vdoing</a>
+      Reference from <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="Vdoing">Vdoing</a>
     </span>
   </div>
 </template>

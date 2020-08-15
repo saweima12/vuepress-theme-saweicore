@@ -25,8 +25,8 @@ export function filterArchives(pages) {
 }
 
 export function filterArchiveChapter(archive_page, pages) {
-  return pages.reduce((obj, page) => {
-
+  // traverse all page, add to chapter.
+  let result = pages.reduce((obj, page) => {
     if (page.pid === 'archive')
       return obj;
 
@@ -34,7 +34,6 @@ export function filterArchiveChapter(archive_page, pages) {
     const { frontmatter: { archive } } = page;
     if (!archive || archive.id != archive_page.id)
       return obj;
-
 
     const { chapter, section } = getArchiveIndexByPage(archive);
     // initialize chapter struct.
@@ -60,7 +59,14 @@ export function filterArchiveChapter(archive_page, pages) {
     sections_obj.list.push(page_obj);
 
     return obj
-  }, {})
+  }, {});
+
+  // sort all section.
+  Object.values(result).map(chapter => {
+    chapter.sections.list.sort();
+  })
+
+  return result;
 }
 
 export function getArchiveIndexByPage(archive_meta) {
@@ -72,7 +78,7 @@ export function getArchiveIndexByPage(archive_meta) {
   }
 
   return {
-    chapter: parseInt(chapter) || 0,
+    chapter: parseInt(chapter) || -1,
     section: parseInt(section) || 0
   }
 

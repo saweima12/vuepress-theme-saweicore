@@ -44,7 +44,7 @@ export default {
     display inline-block
     position absolute
     left 1rem
-    top ($navbarHeight + .3rem)
+    top ($navbarHeight + .8rem)
     padding 0
     text-align center
     color #cdcdcd

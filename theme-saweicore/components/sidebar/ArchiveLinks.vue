@@ -11,14 +11,15 @@
       v-if="!isEmpty(archive)"
     >
       <CollapsableGroup
-        v-for="(item, key) in archive.chapters"
-        :item="item"
+        v-for="(chapter, key) in archive.chapters"
+        :item="chapter"
         :key="key"
         :eventCode="`toggle-archive-group`"
+        :defaultStatus="$page.key in chapter.sections.map"
       >
         <li
           class="item-link"
-          v-for="(section, section_key) in item.sections.map"
+          v-for="(section, section_key) in chapter.sections.map"
           :key="section_key"
         >
           <router-link
@@ -78,18 +79,17 @@ export default {
       font-weight 600
       padding .3rem 0
 
-.collapsable-group
+  .collapsable-group
+    a
+      color var(--textColor)
+      &:hover, &.router-link-exact-active
+        color $accentColor
 
-  a
-    color var(--textColor)
-    &:hover, &.router-link-exact-active
-      color $accentColor
+      &.router-link-exact-active
+        border-bottom 1px solid $accentColor
 
-    &.router-link-exact-active
-      border-bottom 1px solid $accentColor
-
-  .item-link
-    padding-left 1rem
+    .item-link
+      padding-left 1rem
 
 
 

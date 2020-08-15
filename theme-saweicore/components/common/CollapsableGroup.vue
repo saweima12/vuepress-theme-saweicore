@@ -1,10 +1,13 @@
 <template>
   <div class="collapsable-group">
     <h1
-      class="title"
+      class="collapsable-title"
       @click="eventBus.$emit(eventCode, item)"
     >
-      {{ item.title }}
+      <span class="title">
+        {{ item.title }}
+      </span>
+
       <span
         class="archive-arrow"
         :class="isOpen ? `down` : `right`"
@@ -29,6 +32,9 @@ export default {
     },
     eventCode: {
       required: true,
+    },
+    defaultStatus: {
+      default: false,
     }
   },
   computed: {
@@ -54,7 +60,7 @@ export default {
     EventBus.$on(this.eventCode, this.onToggleCollapsableGroup);
   },
   mounted() {
-    if (this.$page.key in this.item.sections.map) {
+    if (this.defaultStatus) {
       this.toggleSelf(true);
     }
   },
