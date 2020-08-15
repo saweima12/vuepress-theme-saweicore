@@ -11,42 +11,31 @@
 
     <div class="socials">
       <a
-        :href="$themeConfig.author.socials.plurk.link"
-        v-if="$themeConfig.author.socials.plurk"
+        v-for="(social, index) in $themeConfig.author.socials"
+        :key="index"
+        :href="social.link"
         target="_blank"
       >
-        <div class="social plurk">
-            <PlurkIcon />
+        <div class="social" :class="social.text">
+          <IconSticker :iconComponent="social.component"/>
         </div>
       </a>
-      <a
-        :href="$themeConfig.author.socials.github.link"
-        v-if="$themeConfig.author.socials.github"
-        target="_blank"
-      >
-        <div class="social github">
-          <GithubIcon />
-        </div>
-      </a>
-
     </div>
   </div>
 </template>
 
 <script>
-import PlurkIcon from '@theme/components/icons/PlurkIcon';
-import GithubIcon from '@theme/components/icons/GithubIcon';
+import IconSticker from '@theme/components/common/IconSticker';
 
 export default {
   components: {
-    GithubIcon,
-    PlurkIcon
+    IconSticker,
   },
   computed: {
     author() {
       const { author } = this.$themeConfig;
       return author;
-    }
+    },
   }
 }
 </script>

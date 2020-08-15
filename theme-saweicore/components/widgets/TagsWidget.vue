@@ -33,13 +33,9 @@
 </template>
 
 <script>
-import TagIcon from '@theme/components/icons/TagIcon'
 import _ from 'loadsh'
 
 export default {
-  components: {
-    TagIcon,
-  },
   computed: {
     tags() {
       return this.mode == 'block' ? _.shuffle(this.$tag.pages).slice(0, this.sliceNum): this.$tag.pages;

@@ -16,6 +16,12 @@ module.exports = (themeConfig, ctx) => {
     }
 
     /**
+     * Register All Icon from theme.
+     */
+    const iconPath = path.resolve(__dirname) + '/components/icons';
+    console.log(iconPath)
+
+    /**
      * Add new keyword to themeConfig;
      */
 
@@ -39,6 +45,9 @@ module.exports = (themeConfig, ctx) => {
           ['vuepress-plugin-seo', seoPluginOptions],
           ['@vuepress/plugin-blog', blogPluginOptions],
           ['@vuepress/plugin-search', themeConfig.searchOption],
+          ['@vuepress/register-components', {
+            componentsDir: iconPath,
+          }],
           ['@vuepress/nprogress', {}],
           ...defaultContainerOptions,
         ],

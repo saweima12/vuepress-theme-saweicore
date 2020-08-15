@@ -33,12 +33,8 @@
 
 <script>
 
-import FolderIcon from '@theme/components/icons/FolderIcon'
 
 export default {
-  components: {
-    FolderIcon
-  },
   computed: {
     categories() {
       const sortCategory = this.$category.list.sort((a, b) => a.length > b.length ? -1 : 1);
