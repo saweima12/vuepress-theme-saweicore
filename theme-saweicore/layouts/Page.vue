@@ -125,7 +125,7 @@ export default {
 
   &.mode-wide
     .content-wrapper
-      max-width 840px
+      max-width $widePageWidth
 
   > *:not(.article-wrapper)
     transition .2s ease

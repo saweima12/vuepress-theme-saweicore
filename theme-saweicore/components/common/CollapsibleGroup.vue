@@ -1,25 +1,42 @@
 <template>
-  <div class="collapsable-group">
-    <h1
-      class="collapsable-title"
-      @click="eventBus.$emit(eventCode, item)"
+  <div class="collapsible-group">
+    <header
+      class="collapsible-title"
+      @click="eventCode ? eventBus.$emit(eventCode, item) : {}"
     >
-      <span class="title">
-        {{ item.title }}
-      </span>
+
+      <template v-if="!$slots.title" >
+        <span
+          class="title"
+          v-if="!$slots.title"
+        >
+          {{ item.title }}
+        </span>
+      </template>
+
+      <slot v-else name="title"/>
+
 
       <span
         class="archive-arrow"
         :class="isOpen ? `down` : `right`"
+        v-show="eventCode"
       />
-    </h1>
+    </header>
 
-    <ul
-      class="item-list"
-      v-show="isOpen"
-    >
-      <slot />
-    </ul>
+    <transition name="collaps" >
+      <div
+        class="list-container"
+        v-show="isOpen"
+      >
+        <ul
+          class="item-list"
+        >
+          <slot />
+        </ul>
+      </div>
+    </transition>
+
   </div>
 </template>
 
@@ -31,7 +48,7 @@ export default {
       required: true,
     },
     eventCode: {
-      required: true,
+      required: false,
     },
     defaultStatus: {
       default: false,
@@ -51,13 +68,15 @@ export default {
     toggleSelf(to) {
       this.isOpen = typeof to === 'boolean' ? to : !this.isOpen;
     },
-    onToggleCollapsableGroup(item) {
+    onToggleCollapsibleGroup(item) {
       const result = (item == this.item) && !this.isOpen;
       this.toggleSelf(result)
     }
   },
   created() {
-    EventBus.$on(this.eventCode, this.onToggleCollapsableGroup);
+    if(!this.eventCode)
+      return;
+    EventBus.$on(this.eventCode, this.onToggleCollapsibleGroup);
   },
   mounted() {
     if (this.defaultStatus) {
@@ -65,13 +84,17 @@ export default {
     }
   },
   destroyed() {
+    if(!this.eventCode)
+      return;
     EventBus.$off(this.eventCode);
   }
 }
 </script>
 
 <style lang="stylus">
-.collapsable-group
-  .title
+.collapsible-group
+  .collapsible-title
     cursor pointer
+
+
 </style>

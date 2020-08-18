@@ -2,44 +2,45 @@
   <div
     class="archive-links"
   >
-    <div class="archive-title">
+    <!-- <div class="archive-title">
       {{ archive.title  }}
-    </div>
+    </div> -->
 
     <div
       class="chapter-list"
       v-if="!isEmpty(archive)"
     >
-      <CollapsableGroup
+      <CollapsibleGroup
         v-for="(chapter, key) in archive.chapters"
         :item="chapter"
         :key="key"
         :eventCode="`toggle-archive-group`"
         :defaultStatus="$page.key in chapter.sections.map"
       >
-        <li
-          class="item-link"
+        <router-link
           v-for="(section, section_key) in chapter.sections.map"
+          :to="section.page.path"
           :key="section_key"
+          tag="li"
         >
-          <router-link
-            :to="section.page.path"
+          <span
+            class="item-link"
           >
             {{ section.title }}
-          </router-link>
-        </li>
-      </CollapsableGroup>
+          </span>
+        </router-link>
+      </CollapsibleGroup>
     </div>
   </div>
 </template>
 
 <script>
 import { isEmpty } from '@theme/utils'
-import CollapsableGroup from '@theme/components/common/CollapsableGroup';
+import CollapsibleGroup from '@theme/components/common/CollapsibleGroup';
 
 export default {
   components: {
-    CollapsableGroup,
+    CollapsibleGroup,
   },
   computed: {
     archive() {
@@ -65,32 +66,62 @@ export default {
 
   .archive-title
     padding .35rem 1.2rem .25rem 1.25rem
-    font-size 1.2rem
+    font-size 22px
     font-weight 600
 
   .chapter-list
-    padding .5rem 0
+    padding .1rem 0
 
-  .collapsable-group
-    padding .2rem .5rem .2rem 2rem
+  .collapsible-group
+    margin-bottom .5rem
+
+    .collapsible-title
+      font-size 100%
+      box-sizing border-box
+      padding .2rem .5rem .2rem 2rem
 
     .title
-      font-size 1.1rem
+      font-size 18.5px
+      line-height 1.1em
       font-weight 600
-      padding .3rem 0
-
-  .collapsable-group
-    a
-      color var(--textColor)
-      &:hover, &.router-link-exact-active
-        color $accentColor
-
-      &.router-link-exact-active
-        border-bottom 1px solid $accentColor
 
     .item-link
-      padding-left 1rem
+      box-sizing border-box
+
+      a
+        color var(--codeColor)
+
+    // define transition
+    .collaps-enter-active, .collaps-leave-active
+      transition all .2s ease
 
 
+    .collaps-enter, .collaps-leave-to
+      ul
+        overflow hidden
+        max-height 0
+
+    .collaps-leave, .collaps-enter-to
+      ul
+        max-height 80vh - $navbarHeight
+
+
+  .collapsible-group
+    li
+      box-sizing content-box
+      cursor pointer
+      color var(--textColor)
+      padding .2rem 2rem .3rem 3rem
+
+      &:hover, &.router-link-exact-active
+
+        .item-link
+          color $accentColor
+
+        .item-link
+          border-bottom 1px solid $accentColor
+
+      &.router-link-exact-active
+        border-left 6px solid $accentColor
 
 </style>
