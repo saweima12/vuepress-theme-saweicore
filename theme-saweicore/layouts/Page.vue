@@ -92,10 +92,14 @@ export default {
       const { date } = this.$page.frontmatter;
       return date ? dateFormat(date) : null;
     },
+    contextMode() {
+      console.log(this.specifyMode || this.$page.frontmatter.mode)
+      return this.specifyMode || this.$page.frontmatter.mode;
+    },
     pageClassesMode() {
       const { pageOption } = this.$themeConfig;
-      const { frontmatter, pid } = this.$page;
-      return frontmatter.mode
+      const { pid } = this.$page;
+      return this.contextMode
          || (pid == 'post' ? pageOption.defaultPageMode : 'classic')
          || 'classic'
     },
@@ -111,6 +115,23 @@ export default {
       return frontmatter.page_mode || 'narrow';
     },
   },
+  data() {
+    return {
+      specifyMode: null,
+    }
+  },
+  methods: {
+    switchContextMode() {
+      EventBus.$emit('switchContextMode');
+    },
+    onSwitchContextMode(mode) {
+      this.specifyMode = mode ? mode : this.specifyMode != 'vocus' ? 'vocus' : 'classic'
+      console.log(mode);
+    },
+  },
+  mounted() {
+    EventBus.$on('switchContextMode', this.onSwitchContextMode)
+  }
 }
 </script>
 
@@ -138,9 +159,6 @@ export default {
 
   > *
     @extend $content-wrapper
-
-
-
 
 
 @media screen and (min-width $mq-lg)

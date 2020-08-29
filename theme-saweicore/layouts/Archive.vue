@@ -8,7 +8,7 @@
         <h1 class="archive-title">{{ $page.title }}</h1>
         <Content />
       </header>
-
+      <h2 class="toc-title">Table of content</h2>
       <section class="chapter-list">
         <CollapsibleGroup
           v-for="(chapter, ckey) in chapters"
@@ -86,6 +86,7 @@ export default {
     padding 1rem 2.5rem 2rem
     min-height 80vh
 
+
   .archive-header
     padding 1rem .5rem 2rem
     margin-bottom .5rem
@@ -96,8 +97,17 @@ export default {
       font-size 28px
       font-weight 400
 
+  .toc-title
+    font-size 25px
+    font-weight 550
+    padding-left 1rem
+    margin 2rem 0 1.2rem
+
+  .chapter-list
+    padding 0 1rem
+
   .archive-footer
-    margin-top 1.5rem
+    margin-top 2rem
     padding 1rem .5rem
     border-top 1px solid var(--borderColor)
 
@@ -108,6 +118,8 @@ export default {
   .collapsible-group
     padding 0 .5rem
     margin-bottom .5rem
+    .item-list
+      padding 0 .5rem
 
     .collapsible-title
       display flex
@@ -124,7 +136,6 @@ export default {
       display flex
       box-sizing border-box
       margin-bottom .5rem
-      padding-left .8rem
       a
         opacity .6
         color var(--textColor)
@@ -134,7 +145,7 @@ export default {
 
       @media screen and (min-width $mq-md)
         display inline-block
-        width calc(50% - 1rem)
+        width 50%
 
   @media screen and (min-width $mq-md)
     padding 1rem .5rem 0

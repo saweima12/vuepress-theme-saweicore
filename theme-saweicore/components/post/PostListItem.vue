@@ -103,7 +103,7 @@ export default {
       box-sizing border-box
       display inline-block
       vertical-align middle
-      margin 0 .5rem .6rem 0
+      margin 0 .5rem .5rem 0
       padding .3rem
       background var(--bodyBg)
       font-size 13px

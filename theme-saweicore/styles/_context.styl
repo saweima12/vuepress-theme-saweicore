@@ -26,6 +26,12 @@ blockquote
   & > p
     margin 0
 
+table, th, td
+  border 1px solid var(--borderColor)
+
+th, td
+  padding .3rem .5rem
+
 strong
   font-weight 600
 
@@ -37,7 +43,6 @@ img
   color #22979B
   time
     color $accentColor
-
 
 // Article Zone
 .article-wrapper
@@ -55,12 +60,30 @@ img
   h3
     font-size 22px
 
+  h4
+    font-size 20px
+
+  h5
+    font-size 18px
+
   p > img
     display block
     text-align center
 
   img
     margin 0 auto
+
+  ol, ul
+    margin 1rem 0 1.5rem 1.2rem
+
+    li
+      margin .5rem 0
+
+  ol
+    list-style decimal
+
+  ul
+    list-style initial
 
   a.header-anchor
     font-size 0.85em
@@ -72,7 +95,6 @@ img
 
     &:hover
       text-decoration none
-
 
 .article-wrapper.classic
   p
