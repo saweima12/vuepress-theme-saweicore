@@ -8,4 +8,4 @@ archive:
     -1: Uncategorized
 ---
 
-weeed
+This page is a test about the archive.
