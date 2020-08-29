@@ -42,17 +42,7 @@ tags: ['Test', 'Html', 'Markdown']
 
 這篇文章用於測試及預覽文章編寫時的元素，內容包含 h2 ~ h6 、 ol / li 、 ul / li ...等，基本上編寫文章時常用的元素測試都會放在這邊，方便觀看預覽效果。 
 
-## 段落效果預覽
 
-進行文章撰寫時經常會交叉使用許多 element ，如**粗體**、*斜體*亦或者是[超連結](https://saweicore.com)。 偶爾也會加入表格進行補充說明：
-
-| 要素 | 預覽 |
-| ---- | --- |
-| strong | **粗體** |
-| em   |  *斜體* |
-| hyperlink | [超連結](https://saweicore.com) |
-
- 
 ## blockquote test
 
 > blockquote 測試區塊  
@@ -73,3 +63,26 @@ tags: ['Test', 'Html', 'Markdown']
 (　く:::
 |＼ ヽ:::
 </pre>
+
+## 整體效果混合預覽
+
+進行文章撰寫時經常會交叉使用許多 element ，如**粗體**、*斜體*亦或者是[超連結](https://saweicore.com)。 偶爾加入表格進行補充說明：
+
+| 要素 | 預覽 |
+| ---- | --- |
+| strong | **粗體** |
+| em   |  *斜體* |
+| hyperlink | [超連結](https://saweicore.com) |
+
+或是加入一些清單元素，例如：
+
+- 列舉各種事項
+- 提出一些問題
+- 說明一點看法
+
+如果在文章中使用到一些外部資源也可以透過 blockquote 進行引用，例如：
+
+> 名稱： 邊緣沙威瑪  
+> 網址： <https://saweicore.com>
+
+

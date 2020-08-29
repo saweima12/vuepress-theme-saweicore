@@ -65,7 +65,7 @@ export default {
 .post
   box-sizing border-box
   padding 1rem 1.5rem
-  margin-bottom 1rem
+  margin-bottom .5rem
   transition .3s
   @extend $card-box
 
@@ -135,7 +135,7 @@ export default {
 
 @media screen and (min-width $mq-lg)
   .post
-    margin-bottom 1rem
+    margin-bottom .8rem
 
 
 
