@@ -1,11 +1,11 @@
 ---
-title: HTML element test for classic context
+title: Classic 模式的 HTML 元素測試
 date: 2020-08-28 
 categories: ['測試']
 tags: ['Test', 'Html', 'Markdown']
 ---
 
-## h2 ~ h6 test
+## 標題元素
 
 ## H2
 ### H3
@@ -13,7 +13,7 @@ tags: ['Test', 'Html', 'Markdown']
 ##### H5
 ###### H6
 
-## ol test
+## 有序清單
 
 1. ol1
     1. ol1-1
@@ -25,7 +25,7 @@ tags: ['Test', 'Html', 'Markdown']
 3. ol3
 4. ol4
 
-## ul test
+## 無序清單
 
 - ul1
   - ul1-1
@@ -38,17 +38,17 @@ tags: ['Test', 'Html', 'Markdown']
 - ul4
 - ul5
 
-## p test
+## 段落區塊
 
 這篇文章用於測試及預覽文章編寫時的元素，內容包含 h2 ~ h6 、 ol / li 、 ul / li ...等，基本上編寫文章時常用的元素測試都會放在這邊，方便觀看預覽效果。 
 
 
-## blockquote test
+## 引用區塊
 
 > blockquote 測試區塊  
 > 通常用於放置一些外部資訊、參照資料。
 
-## pre test
+## 標記區塊
 
 <pre>
 ……@@@::…………
@@ -63,6 +63,82 @@ tags: ['Test', 'Html', 'Markdown']
 (　く:::
 |＼ ヽ:::
 </pre>
+
+## Markdown 容器測試
+
+### Message Container
+
+**輸入**
+```html
+::: custom-error Error
+  This is custom-error block.
+:::
+
+
+::: custom-warn Warning
+  This is custom-warn block.
+:::
+
+
+::: custom-info Info
+  This is custom-info block.
+:::
+
+
+::: custom-tips Tips
+  This is custom-tips block.
+:::
+```
+
+**結果**
+::: custom-error Error
+  This is custom-error block.
+:::
+
+
+::: custom-warn Warning
+  This is custom-warn block.
+:::
+
+
+::: custom-info Info
+  This is custom-info block.
+:::
+
+
+::: custom-tips Tips
+  This is custom-tips block.
+:::
+
+### Align Container
+
+**輸入**
+```html{1,4}
+::: align-center
+  <div style="width: 80px;">
+    <GithubIcon/>
+  </div>
+:::
+
+::: align-right
+  <div>
+    <h3>Align-right</h3>
+  </div>
+:::
+
+```
+**結果**
+::: align-center
+  <div style="width: 80px;">
+    <GithubIcon/>
+  </div>
+:::
+
+::: align-right
+  <div>
+    <h3>Align-right</h3>
+  </div>
+:::
 
 ## 整體效果混合預覽
 
@@ -84,5 +160,3 @@ tags: ['Test', 'Html', 'Markdown']
 
 > 名稱： 邊緣沙威瑪  
 > 網址： <https://saweicore.com>
-
-
