@@ -1,8 +1,6 @@
 <template>
   <main class="archive-page">
-
     <slot name="top"/>
-
     <div class="content-wrapper">
       <header class="archive-header">
         <h1 class="archive-title">{{ $page.title }}</h1>
@@ -95,7 +93,7 @@ export default {
     .archive-title
       margin-bottom .5rem
       font-size 28px
-      font-weight 400
+      font-weight 600
 
   .toc-title
     font-size 25px
