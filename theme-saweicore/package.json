@@ -12,7 +12,8 @@
   },
   "keywords": [
     "vuepress",
-    "vuepress-theme"
+    "vuepress-theme",
+    "blog"
   ],
   "author": "Saweima",
   "license": "MIT",
@@ -21,22 +22,18 @@
   },
   "homepage": "https://github.com/saweima12/vuepress-theme-saweicore#readme",
   "dependencies": {
-    "@vuepress/plugin-active-header-links": "^1.5.2",
+    "@vuepress/plugin-active-header-links": "^1.5.4",
+    "@vuepress/plugin-back-to-top": "^1.5.4",
     "@vuepress/plugin-blog": "^1.9.2",
-    "@vuepress/plugin-medium-zoom": "^1.5.2",
-    "@vuepress/plugin-nprogress": "^1.5.2",
-    "@vuepress/plugin-search": "^1.5.2",
-    "loadsh": "0.0.4",
-    "lodash": "^4.17.19",
-    "prismjs": "^1.20.0",
-    "vue-feather-icons": "^5.0.0",
-    "vuepress-plugin-container": "^2.1.4",
-    "vuepress-plugin-disqus": "^0.2.0",
-    "vuepress-plugin-reading-progress": "^1.0.9",
-    "vuepress-plugin-smooth-scroll": "0.0.9"
-  },
-  "devDependencies": {
+    "@vuepress/plugin-medium-zoom": "^1.5.4",
+    "@vuepress/plugin-nprogress": "^1.5.4",
+    "@vuepress/plugin-search": "^1.5.4",
+    "lodash": ">=4.17.19",
+    "prismjs": "^1.21.0",
     "moment": "^2.27.0",
-    "vuepress-plugin-seo": "^0.1.4"
+    "vue-feather-icons": "^5.1.0",
+    "vuepress-plugin-container": "^2.1.4",
+    "vuepress-plugin-reading-progress": "^1.0.10",
+    "vuepress-plugin-smooth-scroll": "0.0.9"
   }
 }
