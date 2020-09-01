@@ -10,4 +10,4 @@ A clean and simple theme for Vuepress.
 
 ## Lience
 
-MIT Lience
+[MIT Lience](https://github.com/saweima12/vuepress-theme-saweicore/blob/master/LICENSE)
